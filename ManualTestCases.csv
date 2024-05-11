@@ -1,0 +1,190 @@
+,Project Mars,,,,,,,
+,,,,,,,,
+,Use cases,,,,,,,
+,Skills and profile features,,,,,,,
+,As a user I would be able to show what languages and skills I know.,,,,,,,
+,So that the people seeking for skills and languages can look at what details I hold.,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Test scenario Id,Test Scenario,Test case Description,Pre condition,Test steps,Test Data,Expected Result,Status,Actual Result
+TS_01,Validate Existing/new user able to login the page with valid credentials,"TC_001 Verify if an existing user can login to the Mars portal with valid Username and password
+","Existing user can Navigate to Mars portal
+Login page","User enter Username
+user enter password
+user clicks on login button
+user verifys username in Homepage","http://localhost:5000/Account/Profile
+
+Username: srilatha
+Password: *******","User should be able to login Mars portal successfully
+user should be able to enter Username correctly
+User should be able to enter Password Correctly
+User should be able to see username field in Homepage after successful login",Passed,Homepage should Disply
+TS_02,"Validate User is able to click on profile feature to see language and skills 
+modules","TC_002 Verify user is able to see the Language and skills modules by clicking on profile fe
+ature",,"user Navigate to homepage
+user clicks on profile feature
+user is able to see language and skills
+module.",NA,"User Should be able to View Homepage successfully
+User should be able to click on Profile section 
+User should be able to see Language and skills module Successfully",Passed,Language and skills Module should display
+TS_03,"Validate user is able to add language with optional parameters,such as choose language level and 
+description",TC_003 test the language module with operational paramerters to ensure flexibility and completeness,user is logged into the Language section,"Log into the system as a registered user
+Navigate to the language section in the user profile
+Click on the add language button
+Optionally select language level from a dropdown menu","Language: English
+Choose Language level : Fluent","The system should allow the user to add skill with or without optional parameters.
+If language level is selected it should be saved along with the language name ",Passed,"The system successfully allowes the user to add a language with optional parammeters
+If Skill level is selected, it is saved along with the language name."
+TS_04,Verify that the user can add upto 4 languages to their profile,"TC_004 Verify that the user can add upto 4 languages to their profile
+TC_005 Verify that user cannot add more than 4 languages to their profile
+",User is logged into their profile,"Navigate to the profile section
+Locate the option to add new Language-
+ and choose language level
+Add 4 languages to the profile, 
+ensuring each language is unique","English-Fluent
+french-Native
+Tamil-Basic
+Hindi-conversational",User is able to successfully add 4 languages to their profile without encountering any errors,Passed,Upto 4 languages should display
+Ts_05,Verify user is able to Adding a language to the module with valid data,"TC_006 Verify user is able to start with an empty language module 
+Ensure that the language being added is not already present in the module
+TC_007 Verify user is able to click on add new button to add new Language
+TC_008 Verify user is able to find Add language and Choose language fields
+TC_009 Verify user is able to add language with the language name and choose language level
+TC_010 Verify that the language is succesfully added to the module",The language module is empty or does not contain the language being added.,"User navigates to homepage
+user clicks on profile feature
+User clicks on add new button
+user enters the language name 
+user select the choose langague","Add Language: English
+Choose language: Fluent
+
+
+
+","User should be able to to add new Language
+user should be able to enter new Language name correctly
+user should be abble to see the successfully added language and level fields",Passed,Language and choose language level data should display
+TS_06,Verify user is not allowed to add language with invalid data,"TC_011 Verity user is able to click on add new button
+TC_012 Verify user is not allowed to enter the language with numeric data in language field 
+TC_013 Verify user wil get error message pop-up saying invalid language please enter the c
+orrect langugage name 
+TC_014 Verify that incorrect language name should not save the details to their profile",User is logged into their profile and not allowed to enter language with invalid data,"User navigates to homepage
+user clicks on profile feature
+User clicks on add new button
+user enters the language name 
+user select the choose langague","Language :12
+Choose language :Basic
+Language : @@
+Choose language : Fluent
+Language : &%
+Choose language : conversational","An error message should be displayed indicating that the Language name is invalid and connot contain
+special characters and numbers.""",Failed,Screenshot Actual result
+TS_07,Validate user attempt to add Language with an extremly long Language name,TC_015 Test the language module response to input values that exceed the maximum allowable limit,User is logged into the language module,"Navigate to the language section in the user profile
+Click on the Add language button
+Enter a language name exceeding the maximum character limit(Eg 250) characters
+click on the save or submit button","Language: englishenglishenglishenglish
+So on....","The system should detect the overflow condition and provide an appropriate error message
+ indicating that the language name exceeds the maximum character limit",Failed,"The system did not detect the overflow condition instead, it allowed the user to save the language name exceeding the maximum character limit No error message was displayed."
+TS_08,Verify user is allowed to enter Input text with the minimum allowed length,TC_016 Veify that the language module correctly processes input containing a single character,The Language module is accessible and ready to accept input,"user is able to access the input field of the 
+Language module
+Enter single character as the input text",Language input:a,Language input should not process single character,Failed,System should display indicating proper language name required
+TS_09,Verify user is attempt to add a language with an empty language name ,TC_017 Test the language module with an empty language name to ensure proper validation,User is logged into the language module,"Navigate to the language section in the user profile
+Click on the Add language button
+Leave the language name field empty
+click on the save or submit button","Language: empty
+Choose Language level: empty",An error message displayed indicating that the language name is required and cannot be empty,passed,The syste correctly displayed indcating that the skill name is required and cannot be empty
+TS_10,Verify user is able to open language module and ready for editing,"TC_018  Test for valid inputs
+TC_019 Verify user is able to enter valid input for editing
+TC_020 Verify user is able to click on update button to save the changes
+TC_021 The edited input replaces the original word in the sentence",Langugage Module is open with a input displayed,"Select a word within the sentence.
+type the edited input name 
+save the changes by clicking update button
+the edited input appears in place of the
+ original word in the sentence","Language :english
+Language : tamil(edited)",The edited input replaces the original word in the sentence,passed,The edited word replaces the original word in the sentence.
+TS_11,Verify that language module is open and ready for deleting,"TC_022 Verify user is able to delete selected language
+TC_023 Verify user is able to click on cross symbol to delete language
+TC_024 Verify user is able to delete the selected language",Language module is open with list of languages ,"Select the particular language from the list page
+click on the delete option
+language and choose language level both should be deleted","Language :Hindi
+choose language level : basic",The selected language should be removed from the list,passed,selected language is successfully deleted
+TC_12,"Validate User is able to click on profile feature to see skills 
+module","TC_025 Verify user is able to see the skills modules by clicking on profile fe
+ature",,"user Navigate to homepage
+user clicks on profile feature
+user is able to see language and skills
+module.",NA,"User Should be able to View Homepage successfully
+User should be able to click on Profile section 
+User should be able to see skills module Successfully",Passed,Skills module should display
+TC_13,Verify user is able to Adding a Skills module with valid data,"TC_026 Verify user is able to start with an empty language module 
+Ensure that the Skills being added is not already present in the module
+TC_027 Verify user is able to click on add new button to add new Skills
+TC_028 Verify user is able to find Add skill and Choose Skill level
+TC_029 Verify user is able to add skill and choose skill level
+TC_030 Verify that the Skill is succesfully added to the module",The Skill module is empty or does not contain the skill being added.,"User navigates to homepage
+user clicks on profile feature
+User clicks on profile 
+user enters the Skill input 
+user select the choose skill level","Add skill: Excel
+Choose skill level: Basic
+
+
+
+","User should be able to to add new Skill
+user should be able to enter new Skill name correctly
+user should be abble to see the successfully added Skill and Choose level skill",Passed,Skill and choose skill level data should display
+TC_14,Verify user is not allowed to add Skill with invalid data,"TC_031 Verity user is able to click on add new button under skills module
+TC_032 Verify user is not allowed to enter the Skill with numeric data and special charactersin skill
+TC_033 Verify user wil get error message pop-up saying invalid Skill please enter the c
+orrect Skill input
+TC_034 Verify that incorrect Skill name should not save the details to their profile",User is logged into their profile and not allowed to enter Skill with invalid data,"User navigates to homepage
+user clicks on profile feature
+User clicks on add new button
+user enters the Skill name 
+user select the choose skill level","Skill :12
+Choose Skill level :Beginner
+Skill : @@
+Choose Skill level : Intermediate
+Skill : &%
+Choose Skill level : Expert","An error message should be displayed indicating that the skill name is invalid and connot contain
+special characters and numbers.",Failed,Screenshot Actual result
+TC_15 ,Verify user is able to open Skill module and ready for editing,"TC_035  Test for valid inputs
+TC_036 Verify user is able to enter valid input for editing
+TC_037 Verify user is able to click on update button to save the changes
+TC_038 The edited input replaces the original word in the sentence",Skill Module is open with a input displayed,"Select a word within the sentence.
+type the edited input name 
+save the changes by clicking update button
+the edited input appears in place of the
+ original word in the sentence","Skill :excel
+Choose skill level : expert
+edited
+Skill: sql
+Choose skill level : beginner ",The edited input replaces the original word in the sentence,passed,Edited Fields should display successfully
+TC_16,Verify that Skill module is open and ready for deleting,"TC_039 Verify user is able to delete selected Skill
+TC_040 Verify user is able to click on cross symbol to delete Skill
+TC_041 Verify user is able to delete the selected Skill",Skill module is open with list of Skills,"Select the particular Skill from the list page
+click on the delete option
+Skill and choose Skill level level both should be deleted","Skill:Hindi
+choose Skill level :",The selected Skill should be removed from the list,passed,selected Skill is successfully deleted
+TC_17,Verify user is attempt to add a skill with an empty skill name ,TC_042 Test the skill module with an empty skill name to ensure proper validation,User is logged into the skills module,"Navigate to the Skills section in the user profile
+Click on the Add skill button
+Leave the Skill name field empty
+click on the save or submit button","Skill: empty
+Choose skill level: empty",An error message displayed indicating that the skill name is required and cannot be empty,passed,The syste correctly displayed indcating that the skill name is required and cannot be empty
+TC_18,Validate user attempt to add skill with an extremly long skill name,TC_043 Test the skill module response to input values that exceed the maximum allowable limit,User is logged into the skill module,"Navigate to the skill section in the user profile
+Click on the Add skill button
+Enter a skill name exceeding the maximum character limit(Eg 250) characters
+click on the save or submit button","Skill: excelexcelexcelexcelexcelexcel
+So on....","The system should detect the overflow condition and provide an appropriate error message
+ indicating that the skill name exceeds the maximum character limit",Failed,"The system did not detect the overflow condition instead, it allowed the user to save the skills name exceeding the maximum character limit No error message was displayed."
+TC_19,"Validate user is able to add skill with optional parameters,such as skill level and 
+description",TC_ 044  test the skill module with operational paramerters to ensure flexibility and completeness,user is logged into the skill module,"Log into the system as a registered user
+Navigate to the skills section in the user profile
+Click on the add skill button
+Enter the skill name and select the proficiency level from dropdown
+Optionally, enter  a description for the skill
+(Eg: proficient in multiple programming languages)
+Java,python and c#","Skill: proficient in multiple programming languages)
+Java,python and c#
+Choose skill level : Expert","The system should allow the user to add skill with or without optional parameters.
+If skill level is selected it should be saved along with skill name 
+If a description is provided, it should be saved along with the skill name.",Passed,"The system successfully allowes the user to add a skill with optional parammeters
+If a description is provided, it is saved along with skill name."
