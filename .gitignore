@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/SpecFlowProjectMars2/DesignTimeBuild
+/.vs/SpecFlowProjectMars2/FileContentIndex
+/obj/Debug/net6.0
