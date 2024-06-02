@@ -5,3 +5,5 @@
 /.vs/SpecFlowProjectMars2/DesignTimeBuild
 /.vs/SpecFlowProjectMars2/FileContentIndex
 /obj/Debug/net6.0
+/.vs/SpecFlowProjectMars2/v17
+/.gitignore
